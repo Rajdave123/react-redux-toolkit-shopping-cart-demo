@@ -4,9 +4,10 @@ import "../css/Product.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../redux/ProductSlice";
 import { addItem, removeItem } from "../redux/slice";
+import type { AppDispatch } from "../redux/store";
 
 const Product = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     dispatch(fetchProducts());
